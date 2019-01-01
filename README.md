@@ -1,4 +1,4 @@
-# Nodejs MVC JSON API
+# Nodejs MVC JSON API ES6
 
 ### Technologies
 - [NodeJs] - Mvc JSON API .
