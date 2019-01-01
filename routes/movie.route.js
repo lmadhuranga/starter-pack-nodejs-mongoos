@@ -1,21 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// Require the controllers WHICH WE DID NOT CREATE YET!!
-var movie_controller = require('../controllers/movie');
+// Require the controllers
+const MovieController = require('../controllers/MovieController');
 
+router.get('/', MovieController.getAll);
 
-// a simple test url to check that all of our files are communicating correctly.
-router.get('/', movie_controller.test);
+router.post('/create', MovieController.create);
 
+router.get('/:id', MovieController.get);
 
-router.post('/create', movie_controller.movie_create);
+router.put('/:id/update', MovieController.update);
 
-router.get('/:id', movie_controller.movie_details);
-
-router.put('/:id/update', movie_controller.movie_update);
-
-router.delete('/:id/delete', movie_controller.movie_delete);
-
+router.delete('/:id/delete', MovieController.delete);
 
 module.exports = router;
